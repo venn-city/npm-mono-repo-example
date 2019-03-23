@@ -13,7 +13,7 @@ I hope this reference can help other companies achieve similar setup.
   - executeOnChanged.js a wrapper for lerna commands, to scope them to changed packages only, based on lerna changed.
 
 ## Main reasoning
-Make creating new packages the easiest we can.
+Getting the process of creating new packages the easiest we can.
 Any npm package added is automatically assigned to our CI\CD pipelines which automates the release of new versions.
 It is powered by [lerna](https://github.com/lerna/lerna).
 So if you want to understand more deeply how it works, go ahead and read their documentation.
