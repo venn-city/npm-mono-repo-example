@@ -1,0 +1,19 @@
+{
+    "lerna": "3.10.7",
+    "version": "independent",
+    "command": {
+      "publish": {
+        "conventionalCommits": true,
+        "allowBranch": "master"
+      },
+      "version": {
+        "message": "chore(release): update versions [ci skip]"
+      }
+    },
+    "packages": [
+      "packages/ui/*",
+      "packages/crossPlatform/*",
+      "packages/server/*"
+    ]
+  }
+  

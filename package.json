@@ -1,0 +1,40 @@
+{
+  "name": "@venncity/npm-shelf",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "node ./verifyNodeVersion.js",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "commit": "git-cz",
+    "exec-changed": "./scripts/executeOnChanged.js",
+    "bootstrap": "lerna bootstrap --hoist",
+    "new:package": "hygen package new",
+    "test:ci": "export JEST_JUNIT_OUTPUT=`pwd`/reports/junit/ && npm run exec-changed lerna exec 'JEST_JUNIT_OUTPUT=$JEST_JUNIT_OUTPUT/$LERNA_PACKAGE_NAME-test-results.xml npm run test:ci'"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^7.3.1",
+    "commitizen": "^3.0.5",
+    "commitlint": "^7.3.2",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^0.14.3",
+    "lerna": "^3.10.7"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=8.10.0 <8.10.1"
+  }
+}
